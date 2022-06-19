@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+     <title>Clasificador de articulos</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+ </head>
+
+<body>
+    {% include "classifier_interface/navbar.html" %}
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Archivos originales</label>
+      <input class="form-control" type="file" id="formFile">
+    </div>
+    <div class="mb-3">
+      <label for="formFileMultiple" class="form-label">Archivos limpios</label>
+      <input class="form-control" type="file" id="formFile">
+    </div>
+    <div class="mb-3">
+      <label for="formFileDisabled" class="form-label">Articulos pre clasificados</label>
+      <input class="form-control" type="file" id="formFile">
+    </div>
+    <div class="mb-3">
+      <label for="formFileSm" class="form-label">Articulos pre clasificados</label>
+      <input class="form-control" id="formFile" type="file">
+    </div>
+</body>
+</html>

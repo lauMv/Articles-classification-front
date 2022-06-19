@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+  <title>clasificador</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/static/classifier_interface/style.css">
+</head>
+<body>
+    <nav class="navbar  navbar-fixed-top nav-color">
+        <div class="navbar-header me-auto">
+          <a class="navbar-brand me-auto" href="{% url 'classifier_interface:index' %}" align="left">
+                <img src="/static/classifier_interface/imgs/logo.png" alt="" width="210" height="50" class="d-inline-block align-text-top">
+          </a>
+        </div>
+    <div class="navbar-collapse" >
+      <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link text-white h4" aria-current="page" href="{% url 'classifier_interface:setup' %}">Configuracion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white h4" href="{% url 'classifier_interface:download' %}"> Programar descarga </a>
+            </li>
+      </ul>
+    </div>
+</nav>
+    <div class="bck-color">
+
+    </div>
+</body>
+</html>
