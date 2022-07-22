@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,17 +27,24 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # Application definition
 
 INSTALLED_APPS = [
-    'classifier_interface.apps.ClassifierInterfaceConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'classifier_interface',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +84,16 @@ WSGI_APPLICATION = 'Articles_Classifier_Front.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
+        # 'ENGINE': str(os.path.join(Path(__file__).absolute().parents[1], "h2", "bin", "h2-1.4.200.jar")),
+        # 'NAME': 'articles_classification_DB',
+        # 'USER': 'sa',
+        # 'PASSWORD':  os.getenv("TEXT_CLASSIFIER_DB_PASSWORD"),
+        # 'HOST': 'jdbc:h2:tcp://localhost:5234/articles_classification',
+        # 'OPTIONS': {
+        #     'driver': 'org.h2.Driver',
+        # },
+
     }
 }
 

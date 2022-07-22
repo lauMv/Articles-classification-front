@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+
 urlpatterns = [
-    path('classifier_interface/', include('classifier_interface.urls')),
+    path('', include('classifier_interface.urls')),
     path('admin/', admin.site.urls),
 ]

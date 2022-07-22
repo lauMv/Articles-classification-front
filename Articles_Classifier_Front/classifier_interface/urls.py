@@ -1,11 +1,11 @@
-from django.urls import path
+from django.urls import path, reverse_lazy
 
 from . import views
 
 app_name = 'classifier_interface'
+
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    path('<int:pk>/', views.ArticleDetailView.as_view(), name='detail'),
-    path('config/', views.SetupEnvironmentView.as_view(), name='setup'),
-    path('download/', views.SetupDownload.as_view(), name='download'),
+    path('classifier_interface/', views.IndexView.as_view(), name='index'),
+    path('classifier_interface/<int:id>/', views.ArticleDetailView.as_view(), name='detail'),
+    path('config/', views.ClassifierView.as_view(), name='setup')
 ]

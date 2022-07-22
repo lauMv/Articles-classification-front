@@ -18,19 +18,18 @@
                 <img src="/static/classifier_interface/imgs/logo.png" alt="" width="210" height="50" class="d-inline-block align-text-top">
           </a>
         </div>
-    <div class="navbar-collapse" >
+    <div class="navbar-collapse me-auto" >
       <ul class="nav justify-content-end">
+           <li class="nav-item">
+               <a class="nav-link text-white h4" href="{% url 'classifier_interface:index' %}"> Bandeja de entrada</a>
             <li class="nav-item">
               <a class="nav-link text-white h4" aria-current="page" href="{% url 'classifier_interface:setup' %}">Configuracion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white h4" href="{% url 'classifier_interface:download' %}"> Programar descarga </a>
             </li>
       </ul>
     </div>
 </nav>
-    <div class="bck-color">
-
+    <div class="bck-color nav-fixed-border">
+        <nav></nav>
     </div>
 </body>
 </html>
